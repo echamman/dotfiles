@@ -80,6 +80,7 @@
     glow # markdown previewer in terminal
     vscode
     git
+    discord
 
     btop  # replacement of htop/nmon
     iotop # io monitoring
@@ -96,6 +97,11 @@
     ethtool
     pciutils # lspci
     usbutils # lsusb
+
+    # themes
+    orchis-theme
+    nordic
+
   ];
 
   # basic configuration of git, please change to your own
@@ -120,6 +126,11 @@
       export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
     '';
   };
+
+
+  # Theming configuration
+  gtk.enable = true;
+  gtk.theme.name = "nordic";
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
