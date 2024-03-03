@@ -80,6 +80,7 @@
     glow # markdown previewer in terminal
     vscode
     discord
+    telegram-desktop
 
     btop  # replacement of htop/nmon
     iotop # io monitoring
@@ -97,9 +98,7 @@
     pciutils # lspci
     usbutils # lsusb
 
-    # themes
-    orchis-theme
-    nordic
+    spotify
 
   ];
 
@@ -109,6 +108,7 @@
     userName  = "echamman";
     userEmail = "e.hamman@telus.net";
   };
+  
   # starship - an customizable prompt for any shell
   programs.starship = {
     enable = true;
@@ -133,7 +133,8 @@
 
   # Theming configuration
   gtk.enable = true;
-  gtk.theme.name = "nordic";
+  gtk.theme.package = pkgs.orchis-theme;
+  gtk.theme.name = "Orchis";
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

@@ -180,6 +180,11 @@
     wineWowPackages.waylandFull
 
     gparted
+
+    # Themes
+    gnome.gnome-themes-extra
+    gnome.adwaita-icon-theme
+
   ];
 
 programs.steam = {
