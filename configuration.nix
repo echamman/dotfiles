@@ -153,6 +153,9 @@
     NIXOS_OZONE_WL = "1";
 };
 
+  # Tailscale
+  services.tailscale.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -183,7 +186,9 @@
 
     # Themes
     gnome.gnome-themes-extra
+    gtk-engine-murrine
     gnome.adwaita-icon-theme
+    gnome.gnome-tweaks
 
   ];
 
