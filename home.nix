@@ -99,6 +99,11 @@
     usbutils # lsusb
 
     spotify
+
+    # Music Production
+    bitwig-studio
+    yabridge
+    reaper
   ];
 
   # basic configuration of git, please change to your own
@@ -134,6 +139,8 @@
   gtk.enable = true;
   gtk.theme.package = pkgs.orchis-theme;
   gtk.theme.name = "Orchis";
+  gtk.cursorTheme.package = pkgs.bibata-cursors;
+  gtk.cursorTheme.name = "Bibata-Original-Ice";
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

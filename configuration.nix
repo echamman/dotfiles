@@ -47,21 +47,19 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  services.flatpak.enable = true;
-
-  # Enable the Pantheon Desktop Environment.
-  #services.xserver.displayManager.lightdm.enable = true;
-  #services.xserver.desktopManager.pantheon.enable = true;
-
-  #Gnome
+  #DE
   services.xserver.desktopManager.gnome.enable = true;
   services.xserver.displayManager.gdm.enable = true;
+  #services.xserver.displayManager.sddm.enable = true;
+  #services.xserver.desktopManager.plasma6.enable = true;
 
 # Configure keymap in X11
   services.xserver = {
     layout = "us";
     xkbVariant = "";
   };
+
+  services.flatpak.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
