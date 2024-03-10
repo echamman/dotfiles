@@ -7,10 +7,10 @@
 ############################################################################
 
 deploy:
-  nixos-rebuild switch --flake ~/.dotfiles --use-remote-sudo
+  nixos-rebuild switch --flake ~/.dotfiles#default --use-remote-sudo
 
 debug:
-  nixos-rebuild switch --flake ~/.dotfiles --use-remote-sudo --show-trace --verbose
+  nixos-rebuild switch --flake ~/.dotfiles#default --use-remote-sudo --show-trace --verbose
 
 up:
   nix flake update

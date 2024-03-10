@@ -14,7 +14,7 @@
   outputs = inputs@{ self, nixpkgs, ... }:
 
     let
-      system = "x86_64-linx";
+      system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
@@ -24,7 +24,7 @@
           specialArgs = {inherit inputs;};
 
           modules = [
-            ./configuration.nix
+            ./hosts/default/configuration.nix
             inputs.home-manager.nixosModules.default
           ];
         };
