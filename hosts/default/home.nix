@@ -31,6 +31,7 @@
     eza # A modern replacement for ‘ls’
     fzf # A command-line fuzzy finder
     just
+    rofi
 
     # networking tools
     mtr # A network diagnostic tool
@@ -65,6 +66,7 @@
     vscode
     discord
     telegram-desktop
+    thunderbird
 
     btop  # replacement of htop/nmon
     iotop # io monitoring

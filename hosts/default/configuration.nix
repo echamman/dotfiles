@@ -126,15 +126,17 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
 
-  # support both 32- and 64-bit applications
+    # support both 32- and 64-bit applications
     wineWowPackages.stable
     winetricks
     wineWowPackages.waylandFull
 
+    # gaming
     gamescope
     mangohud
     lutris
     protontricks
+    r2modman
 
     gparted
 
