@@ -7,6 +7,7 @@
       inputs.home-manager.nixosModules.default
       
       outputs.nixosModules.steam
+      #outputs.nixosModules.rofi
     ];
 
   # Bootloader.
@@ -39,7 +40,7 @@
 
   #DE
   services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma6.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
 # Configure keymap in X11
   services.xserver.xkb = {
@@ -124,30 +125,16 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+
   # support both 32- and 64-bit applications
     wineWowPackages.stable
-
-    # support 32-bit only
-    wine
-
-    # support 64-bit only
-    (wine.override { wineBuild = "wine64"; })
-
-    # support 64-bit only
-    wine64
-
-    # wine-staging (version with experimental features)
-    wineWowPackages.staging
-
-    # winetricks (all versions)
     winetricks
-
-    # native wayland support (unstable)
     wineWowPackages.waylandFull
 
     gamescope
+    mangohud
+    lutris
+    protontricks
 
     gparted
 
@@ -161,6 +148,9 @@
 
   # Custom Modules
   steam.enable = true;
+  #rofi.enable = true;
+
+  programs.kdeconnect.enable = true;
 
   # 1Password
   programs._1password.enable = true;
