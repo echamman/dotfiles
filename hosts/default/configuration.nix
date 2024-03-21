@@ -35,12 +35,25 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  # DE
+  services = {
+    xserver.enable = true;
 
-  #DE
-  services.xserver.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+    # KDE
+    xserver.displayManager.sddm.enable = true;
+    desktopManager.plasma6.enable = true;
+
+    # i3
+    xserver.windowManager.i3 = {
+      enable = true;
+      extraPackages = with pkgs; [
+        #dmenu #application launcher most people use
+        i3status # gives you the default i3 status bar
+        i3lock-fancy-rapid # i3 screen locker
+        i3blocks #if you are planning on using i3blocks over i3status
+     ];
+    };
+  };
 
 # Configure keymap in X11
   services.xserver.xkb = {
@@ -137,6 +150,7 @@
     lutris
     protontricks
     r2modman
+    steamtinkerlaunch
 
     gparted
 
@@ -146,6 +160,10 @@
     gnome.adwaita-icon-theme
     gnome.gnome-tweaks
 
+    # i3
+    arandr  # Monitor Config
+    feh     # Wallpaper
+    picom   # Compositor
   ];
 
   # Custom Modules
@@ -163,6 +181,38 @@
     polkitPolicyOwners = [ "ethan" ];
   };
 
+  # Configure fonts
+  fonts = {
+    packages = with pkgs; [
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
+      source-han-sans
+      source-han-serif
+      source-han-mono
+      source-han-code-jp
+      twitter-color-emoji
+      liberation_ttf
+      fira-code
+      fira-code-symbols
+      dina-font
+      ubuntu_font_family
+      # nerdfonts
+      (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    ];
+
+    # Enable default fonts
+    enableDefaultPackages = true;
+
+    # Configure default fonts
+    fontconfig = {
+      defaultFonts = {
+        serif = [ "Ubuntu" "Regular" ];
+        sansSerif = [ "Ubuntu" "Regular" ];
+        monospace = [ "FiraCode Nerd Font" "Regular" ];
+      };
+    };
+  };
 
   system.stateVersion = "23.11"; # Did you read the comment?
 
