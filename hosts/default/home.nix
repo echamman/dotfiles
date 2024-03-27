@@ -32,6 +32,7 @@
     fzf # A command-line fuzzy finder
     just
     rofi
+    vlc
 
     # networking tools
     mtr # A network diagnostic tool
@@ -83,6 +84,7 @@
     ethtool
     pciutils # lspci
     usbutils # lsusb
+    pkgs.qbittorrent-qt5
 
     spotify
 
