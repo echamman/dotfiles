@@ -38,6 +38,7 @@
   # DE
   services = {
     xserver.enable = true;
+    xserver.videoDrivers = ["amdgpu"];
 
     # KDE
     xserver.displayManager.sddm.enable = true;
@@ -107,30 +108,12 @@
 # Enable the Flakes feature and the accompanying new nix command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Enable OpenGL
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-  };
-
-  # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"]; # or "nvidiaLegacy470 etc.
-
-  hardware.nvidia = {
-    
-    modesetting.enable = true;
-
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
-    open = false;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
-  };
+  # Enable AMD
+  # boot.initrd.kernelmodules = [ "amdgpu"];
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
-};
+  };
 
   # Tailscale
   services.tailscale.enable = true;
