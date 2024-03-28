@@ -35,6 +35,10 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
 
+  # Bluetooth enable
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+
   # DE
   services = {
     xserver.enable = true;
@@ -83,7 +87,7 @@
   users.users.ethan = {
     isNormalUser = true;
     description = "ethan";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "corectrl"];
     packages = with pkgs; [
       firefox
     ];
@@ -152,6 +156,12 @@
   # Custom Modules
   steam.enable = true;
   #rofi.enable = true;
+
+  programs.corectrl = {
+    enable = true;
+    gpuOverclock.ppfeaturemask = "0xffffffff";
+    gpuOverclock.enable = true;
+  };
 
   programs.kdeconnect.enable = true;
 

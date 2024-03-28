@@ -70,6 +70,7 @@
     thunderbird
 
     btop  # replacement of htop/nmon
+    nvtopPackages.amd
     iotop # io monitoring
     iftop # network monitoring
 
