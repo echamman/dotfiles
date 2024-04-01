@@ -92,7 +92,6 @@
 
     # Music Production
     bitwig-studio
-    yabridge
     reaper
   ];
 

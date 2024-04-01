@@ -88,13 +88,19 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
+    jack.enable = true;
+  };
+
+  # Musnix Config
+  musnix = {
+    enable = true;
+    kernel.realtime = true;
   };
 
   users.users.ethan = {
     isNormalUser = true;
     description = "ethan";
-    extraGroups = [ "networkmanager" "wheel" "corectrl"];
+    extraGroups = [ "networkmanager" "wheel" "corectrl" "audio"];
     packages = with pkgs; [
       firefox
     ];
@@ -135,8 +141,13 @@
 
     # support both 32- and 64-bit applications
     wineWowPackages.stable
+    #wine64
     winetricks
-    wineWowPackages.waylandFull
+    #wineWowPackages.waylandFull
+
+    # Music
+    inputs.old-yabridge-nixpkgs.legacyPackages.${system}.yabridge
+    yabridgectl
 
     # gaming
     gamescope
@@ -198,6 +209,7 @@
       fira-code-symbols
       dina-font
       ubuntu_font_family
+      open-sans
       # nerdfonts
       (nerdfonts.override { fonts = [ "FiraCode" ]; })
     ];

@@ -3,8 +3,11 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    old-yabridge-nixpkgs.url = "github:nixos/nixpkgs/fd04bea4cbf76f86f244b9e2549fca066db8ddff";
 
     grub2-themes.url = "github:vinceliuice/grub2-themes";
+
+    musnix.url = "github:musnix/musnix";
 
     # home-manager, used for managing user configuration
     home-manager = {
@@ -33,6 +36,7 @@
             ./hosts/default/configuration.nix
             inputs.home-manager.nixosModules.default
             grub2-themes.nixosModules.default
+            inputs.musnix.nixosModules.musnix
           ];
         };
       };
