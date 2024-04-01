@@ -138,6 +138,7 @@
     protontricks
     r2modman
     steamtinkerlaunch
+    xwaylandvideobridge
 
     gparted
 

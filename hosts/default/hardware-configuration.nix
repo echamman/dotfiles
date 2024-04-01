@@ -18,8 +18,8 @@
       fsType = "ext4";
     };
 
-  fileSystems."/mnt/games" =
-    { device = "/dev/disk/by-uuid/9992f7ff-9310-4808-9397-d915fda618e2";
+  fileSystems."/mnt/bigboi" = 
+    { device = "/dev/disk/by-uuid/0f579236-2aa5-4f7b-bc40-ffe070c938c8";
       fsType = "ext4";
     };
 
