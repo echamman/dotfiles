@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    grub2-themes.url = "github:vinceliuice/grub2-themes";
+
     # home-manager, used for managing user configuration
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -11,7 +13,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, grub2-themes, ... }:
 
     let
       system = "x86_64-linux";
@@ -30,6 +32,7 @@
           modules = [
             ./hosts/default/configuration.nix
             inputs.home-manager.nixosModules.default
+            grub2-themes.nixosModules.default
           ];
         };
       };
