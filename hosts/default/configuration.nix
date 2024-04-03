@@ -5,9 +5,6 @@
     [ 
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
-      
-      outputs.nixosModules.steam
-      #outputs.nixosModules.rofi
     ];
 
   # Bootloader.
@@ -101,18 +98,6 @@
     isNormalUser = true;
     description = "ethan";
     extraGroups = [ "networkmanager" "wheel" "corectrl" "audio"];
-    packages = with pkgs; [
-      firefox
-    ];
-  };
-
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users = {
-      "ethan" = import ./home.nix;
-    };
   };
 
   # Enable automatic login for the user.
@@ -144,10 +129,6 @@
     #wine64
     winetricks
     #wineWowPackages.waylandFull
-
-    # Music
-    inputs.old-yabridge-nixpkgs.legacyPackages.${system}.yabridge
-    yabridgectl
 
     # gaming
     gamescope

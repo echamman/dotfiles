@@ -21,19 +21,27 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      inherit (self) outputs;
+      #inherit (self) outputs;
+      
     in
     {
-
-      nixosModules = import ./modules;
-
       nixosConfigurations = {
 
         default = nixpkgs.lib.nixosSystem {
-          specialArgs = {inherit inputs outputs;};
+          specialArgs = {inherit inputs; };
 
           modules = [
             ./hosts/default/configuration.nix
+            ./modules
+
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.extraSpecialArgs = { inherit inputs; };
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.users.ethan = import ./hosts/default/home.nix;
+              }
+
             inputs.home-manager.nixosModules.default
             grub2-themes.nixosModules.default
             inputs.musnix.nixosModules.musnix

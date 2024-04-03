@@ -1,5 +1,8 @@
+{ pkgs, lib, ... }:
+
 {
+  imports = [
   # List your module files here
-  steam = import ./steam.nix;
-  #rofi = import ./rofi;
+  ./steam.nix
+  ];
 }

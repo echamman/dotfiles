@@ -69,6 +69,7 @@
     discord
     telegram-desktop
     thunderbird
+    firefox
 
     btop  # replacement of htop/nmon
     nvtopPackages.amd
@@ -93,6 +94,8 @@
     # Music Production
     bitwig-studio
     reaper
+    inputs.old-yabridge-nixpkgs.legacyPackages.${system}.yabridge
+    yabridgectl
   ];
 
   # basic configuration of git, please change to your own
