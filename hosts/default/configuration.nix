@@ -52,16 +52,6 @@
     xserver.displayManager.sddm.enable = true;
     desktopManager.plasma6.enable = true;
 
-    # i3
-    xserver.windowManager.i3 = {
-      enable = true;
-      extraPackages = with pkgs; [
-        #dmenu #application launcher most people use
-        i3status # gives you the default i3 status bar
-        i3lock-fancy-rapid # i3 screen locker
-        i3blocks #if you are planning on using i3blocks over i3status
-     ];
-    };
   };
 
 # Configure keymap in X11
@@ -84,7 +74,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
     jack.enable = true;
   };
 
@@ -110,9 +99,6 @@
 # Enable the Flakes feature and the accompanying new nix command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Enable AMD
-  # boot.initrd.kernelmodules = [ "amdgpu"];
-
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
   };
@@ -120,8 +106,7 @@
   # Tailscale
   services.tailscale.enable = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # System Packages
   environment.systemPackages = with pkgs; [
 
     # support both 32- and 64-bit applications
@@ -140,6 +125,7 @@
     xwaylandvideobridge
 
     gparted
+    appimage-run
 
     # Themes
     gnome.gnome-themes-extra
@@ -147,15 +133,10 @@
     gnome.adwaita-icon-theme
     gnome.gnome-tweaks
 
-    # i3
-    arandr  # Monitor Config
-    feh     # Wallpaper
-    picom   # Compositor
   ];
 
   # Custom Modules
   steam.enable = true;
-  #rofi.enable = true;
 
   programs.corectrl = {
     enable = true;
