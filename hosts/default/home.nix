@@ -1,6 +1,12 @@
 { config, pkgs, inputs, ... }:
 
 {
+  # Import Home manager modules directory
+  imports =
+  [ 
+    ./../../homemanagermodules
+  ];
+
   home.username = "ethan";
   home.homeDirectory = "/home/ethan";
 
@@ -66,18 +72,8 @@
     userName  = "echamman";
     userEmail = "e.hamman@telus.net";
   };
-  
-  # starship - an customizable prompt for any shell
-  programs.starship = {
-    enable = true;
-    # custom settings
-    settings = {
-      add_newline = false;
-      aws.disabled = true;
-      gcloud.disabled = true;
-      line_break.disabled = true;
-    };
-  };
+
+  starship.enable = true; 
 
   programs.bash = {
     enable = true;

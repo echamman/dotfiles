@@ -3,6 +3,6 @@
 {
   imports = [
     # List your module files here
-    ./steam/default.nix
+    ./starship/default.nix
   ];
 }

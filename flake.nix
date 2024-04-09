@@ -33,14 +33,15 @@
           modules = [
             ./hosts/default/configuration.nix
             ./modules
+            ./homemanagermodules
 
-              home-manager.nixosModules.home-manager
-              {
-                home-manager.extraSpecialArgs = { inherit inputs; };
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.users.ethan = import ./hosts/default/home.nix;
-              }
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.ethan = import ./hosts/default/home.nix;
+            }
 
             inputs.home-manager.nixosModules.default
             grub2-themes.nixosModules.default
