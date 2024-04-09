@@ -74,6 +74,7 @@
   };
 
   starship.enable = true; 
+  home.file.".config/starship.toml".source = ./../../homemanagermodules/starship/starship.toml;
 
   programs.bash = {
     enable = true;
