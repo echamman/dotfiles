@@ -80,7 +80,7 @@
   # Musnix Config
   musnix = {
     enable = true;
-    kernel.realtime = true;
+    kernel.realtime = false;
   };
 
   users.users.ethan = {

@@ -20,6 +20,7 @@
     nvtopPackages.amd
     iotop # io monitoring
     iftop # network monitoring
+    htop 
 
     # archives
     zip
@@ -45,6 +46,7 @@
     telegram-desktop
     thunderbird
     firefox
+    element-desktop
 
     # system call monitoring
     strace # system call monitoring
