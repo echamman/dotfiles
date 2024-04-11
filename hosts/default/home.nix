@@ -5,6 +5,7 @@
   imports =
   [ 
     ./../../homemanagermodules
+    inputs.nix-colors.homeManagerModules.default
   ];
 
   home.username = "ethan";
@@ -16,10 +17,13 @@
     "Xft.dpi" = 172;
   };
 
+  colorScheme = inputs.nix-colors.colorSchemes.rose-pine-moon;
+
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
 
     # Terminal
+    #kitty
     neofetch
     nnn # terminal file manager
     btop  # replacement of htop/nmon
@@ -38,6 +42,7 @@
     # utils
     just
     tofi
+    rofi-wayland
     vlc
 
     # networking tools
@@ -74,7 +79,7 @@
   };
 
   starship.enable = true; 
-  home.file.".config/starship.toml".source = ./../../homemanagermodules/starship/starship.toml;
+  kitty.enable = true;
 
   programs.bash = {
     enable = true;

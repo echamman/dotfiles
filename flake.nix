@@ -3,11 +3,18 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    # Older yabridge package
     old-yabridge-nixpkgs.url = "github:nixos/nixpkgs/fd04bea4cbf76f86f244b9e2549fca066db8ddff";
 
+    # For grub theme
     grub2-themes.url = "github:vinceliuice/grub2-themes";
 
+    # Musnix for music
     musnix.url = "github:musnix/musnix";
+
+    # Color customization
+    nix-colors.url = "github:misterio77/nix-colors";
 
     # home-manager, used for managing user configuration
     home-manager = {
@@ -33,7 +40,6 @@
           modules = [
             ./hosts/default/configuration.nix
             ./modules
-            ./homemanagermodules
 
             home-manager.nixosModules.home-manager
             {
