@@ -65,7 +65,10 @@
   services.flatpak.enable = true;
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = [ pkgs.gutenprint pkgs.cnijfilter2 ];
+  };
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -110,7 +113,7 @@
   # System Packages
   environment.systemPackages = with pkgs; [
 
-    # support both 32- and 64-bit applications
+    # Wine Packages
     wineWowPackages.stable
     #wine64
     winetricks
@@ -125,16 +128,11 @@
     steamtinkerlaunch
     xwaylandvideobridge
 
+    # System wide utilities
     gparted
     appimage-run
-    vmware-workstation
-
-    # Themes
-    gnome.gnome-themes-extra
-    gtk-engine-murrine
-    gnome.adwaita-icon-theme
-    gnome.gnome-tweaks
-
+    #vmware-workstation
+    gnome.gnome-boxes
   ];
 
   # Custom Modules
