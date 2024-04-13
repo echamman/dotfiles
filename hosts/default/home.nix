@@ -41,9 +41,9 @@
 
     # utils
     just
-    tofi
     rofi-wayland
     vlc
+    caffeine-ng
 
     # networking tools
     nmap # A utility for network discovery and security auditing
@@ -58,6 +58,7 @@
     thunderbird
     firefox
     element-desktop
+    google-chrome  # For work
 
     # system call monitoring
     strace # system call monitoring
@@ -80,6 +81,7 @@
 
   starship.enable = true; 
   kitty.enable = true;
+  tofi.enable = true;
 
   programs.bash = {
     enable = true;

@@ -49,8 +49,10 @@
     xserver.videoDrivers = ["amdgpu"];
 
     # KDE
-    xserver.displayManager.sddm.enable = true;
+    displayManager.sddm.enable = true;
+    #displayManager.sddm.theme = "rose-pine";
     desktopManager.plasma6.enable = true;
+    displayManager.autoLogin.enable = false;
 
   };
 
@@ -89,10 +91,6 @@
     extraGroups = [ "networkmanager" "wheel" "corectrl" "audio"];
   };
 
-  # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = false;
-  services.xserver.displayManager.autoLogin.user = "ethan";
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -106,6 +104,9 @@
   # Tailscale
   services.tailscale.enable = true;
 
+  # Virtualisation enable
+  virtualisation.vmware.host.enable = true;
+  
   # System Packages
   environment.systemPackages = with pkgs; [
 
@@ -126,6 +127,7 @@
 
     gparted
     appimage-run
+    vmware-workstation
 
     # Themes
     gnome.gnome-themes-extra
