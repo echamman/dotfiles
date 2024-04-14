@@ -40,7 +40,6 @@
     unrar
 
     # utils
-    just
     rofi-wayland
     vlc
     caffeine-ng
