@@ -6,5 +6,6 @@
     ./starship/default.nix
     ./kitty/default.nix
     ./tofi/default.nix
+    ./zsh/default.nix
   ];
 }

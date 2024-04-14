@@ -82,15 +82,16 @@
   starship.enable = true; 
   kitty.enable = true;
   tofi.enable = true;
+  zsh.enable = true;
 
-  programs.bash = {
-    enable = true;
-    enableCompletion = true;
+  #programs.bash = {
+  #  enable = true;
+   # enableCompletion = true;
     # TODO add your cusotm bashrc here
-    bashrcExtra = ''
-      export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
-    '';
-  };
+   # bashrcExtra = ''
+  #    export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
+   # '';
+  #};
 
   home.stateVersion = "23.11";
 

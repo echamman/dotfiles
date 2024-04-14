@@ -91,7 +91,8 @@
   users.users.ethan = {
     isNormalUser = true;
     description = "ethan";
-    extraGroups = [ "networkmanager" "wheel" "corectrl" "audio"];
+    extraGroups = [ "networkmanager" "wheel" "corectrl" "audio" "vboxusers"];
+    shell = pkgs.zsh;
   };
 
   # Allow unfree packages
@@ -108,8 +109,12 @@
   services.tailscale.enable = true;
 
   # Virtualisation enable
-  virtualisation.vmware.host.enable = true;
+  # virtualisation.vmware.host.enable = true;
+  virtualisation.virtualbox.host.enable = true;
   
+  # System wide ZSH enable
+  programs.zsh.enable = true;
+
   # System Packages
   environment.systemPackages = with pkgs; [
 
