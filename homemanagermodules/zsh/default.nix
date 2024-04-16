@@ -23,6 +23,12 @@
       };
       history.size = 10000;
       history.path = "${config.xdg.dataHome}/zsh/history";
+
+      # Plugins
+      oh-my-zsh = {
+        enable = true;
+        plugins = [ "1password" "thefuck" "git"];
+      };
     };
 
 

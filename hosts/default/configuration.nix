@@ -136,8 +136,7 @@
     # System wide utilities
     gparted
     appimage-run
-    #vmware-workstation
-    gnome.gnome-boxes
+
   ];
 
   # Custom Modules
