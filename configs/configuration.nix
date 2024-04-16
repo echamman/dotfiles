@@ -28,7 +28,7 @@
   boot.supportedFilesystems = [ "ntfs" ];
 
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -109,7 +109,6 @@
   services.tailscale.enable = true;
 
   # Virtualisation enable
-  # virtualisation.vmware.host.enable = true;
   virtualisation.virtualbox.host.enable = true;
   
   # System wide ZSH enable

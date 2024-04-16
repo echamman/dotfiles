@@ -4,7 +4,7 @@
   # Import Home manager modules directory
   imports =
   [ 
-    ./../../homemanagermodules
+    ../homemanagermodules
     inputs.nix-colors.homeManagerModules.default
   ];
 

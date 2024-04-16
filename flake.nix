@@ -38,7 +38,7 @@
           specialArgs = {inherit inputs; };
 
           modules = [
-            ./hosts/default/configuration.nix
+            ./configs/configuration.nix
             ./modules
 
             home-manager.nixosModules.home-manager
@@ -46,7 +46,7 @@
               home-manager.extraSpecialArgs = { inherit inputs; };
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.ethan = import ./hosts/default/home.nix;
+              home-manager.users.ethan = import ./configs/home.nix;
             }
 
             inputs.home-manager.nixosModules.default

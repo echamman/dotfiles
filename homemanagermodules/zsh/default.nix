@@ -31,6 +31,9 @@
       };
     };
 
+    home.packages = with pkgs; [
+      thefuck
+    ];
 
   };
 }
