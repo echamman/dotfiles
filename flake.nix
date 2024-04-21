@@ -34,7 +34,7 @@
     {
       nixosConfigurations = {
 
-        default = nixpkgs.lib.nixosSystem {
+        enix = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs; };
 
           modules = [

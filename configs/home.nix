@@ -42,6 +42,7 @@
     rofi-wayland
     vlc
     caffeine-ng
+    ncdu
 
     # networking tools
     nmap # A utility for network discovery and security auditing

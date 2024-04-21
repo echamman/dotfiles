@@ -15,11 +15,13 @@
 
       shellAliases = {
         ll = "ls -l";
-        rebuild = "nixos-rebuild switch --flake ~/.dotfiles#default --use-remote-sudo";
-        rebuild-verbose = "nixos-rebuild switch --flake ~/.dotfiles#default --use-remote-sudo --show-trace --verbose";
+        rebuild = "nh os switch ~/.dotfiles --ask";
+        rebuild-dry = "nh os switch ~/.dotfiles --dry";
+        #rebuild-verbose = "nixos-rebuild switch --flake ~/.dotfiles#nixos --use-remote-sudo --show-trace --verbose";
         update = "nix flake update";
         clean = "sudo nix profile wipe-history --profile /nix/var/nix/profiles/system  --older-than 7d";
         nix-gc = "sudo nix-collect-garbage";
+        nf = "neofetch";
       };
       history.size = 10000;
       history.path = "${config.xdg.dataHome}/zsh/history";

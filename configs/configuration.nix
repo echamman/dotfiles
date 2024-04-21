@@ -27,7 +27,7 @@
 
   boot.supportedFilesystems = [ "ntfs" ];
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "enix"; # Define your hostname.
   networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable networking
@@ -98,15 +98,32 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-# Enable the Flakes feature and the accompanying new nix command-line tool
+  # Enable the Flakes feature and the accompanying new nix command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Automatic Garbage Collection
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+
+  # Automatic store cleaning
+  nix.optimise = {
+    automatic = true;
+    dates = [ "3:45" ];
+  };
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
+    FLAKE = "/home/ethan/.dotfiles";
   };
 
   # Tailscale
   services.tailscale.enable = true;
+
+  # Mullvad
+  services.mullvad-vpn.enable = true;
 
   # Virtualisation enable
   virtualisation.virtualbox.host.enable = true;
@@ -135,6 +152,12 @@
     # System wide utilities
     gparted
     appimage-run
+    mullvad-vpn
+
+    # Nix Utilities
+    nh  # Nix Helper
+    nix-output-monitor
+    nvd
 
   ];
 
