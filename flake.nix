@@ -16,6 +16,9 @@
     # Color customization
     nix-colors.url = "github:misterio77/nix-colors";
 
+    # Spicetify 
+    spicetify-nix.url = "github:the-argus/spicetify-nix";
+
     # home-manager, used for managing user configuration
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -23,7 +26,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, grub2-themes, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, grub2-themes, spicetify-nix, ... }:
 
     let
       system = "x86_64-linux";

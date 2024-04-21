@@ -17,6 +17,7 @@
         ll = "ls -l";
         rebuild = "nh os switch ~/.dotfiles --ask";
         rebuild-dry = "nh os switch ~/.dotfiles --dry";
+        rebuildhome = "nh home switch ~/.dotfiles --ask";
         #rebuild-verbose = "nixos-rebuild switch --flake ~/.dotfiles#nixos --use-remote-sudo --show-trace --verbose";
         update = "nix flake update";
         clean = "sudo nix profile wipe-history --profile /nix/var/nix/profiles/system  --older-than 7d";

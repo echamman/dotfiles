@@ -6,6 +6,7 @@
   [ 
     ../homemanagermodules
     inputs.nix-colors.homeManagerModules.default
+    inputs.spicetify-nix.homeManagerModules.spicetify
   ];
 
   home.username = "ethan";
@@ -43,13 +44,14 @@
     vlc
     caffeine-ng
     ncdu
+    waybar
+    swww
 
     # networking tools
     nmap # A utility for network discovery and security auditing
 
     # Applications
     qbittorrent-qt5
-    spotify
     vscode
     discord
     vesktop # Discord alt
@@ -82,6 +84,8 @@
   kitty.enable = true;
   tofi.enable = true;
   zsh.enable = true;
+  hyprland.enable = true;
+  spicetify.enable = true;
 
   home.stateVersion = "23.11";
 

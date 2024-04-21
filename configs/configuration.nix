@@ -153,6 +153,8 @@
     gparted
     appimage-run
     mullvad-vpn
+    dunst
+    libnotify
 
     # Nix Utilities
     nh  # Nix Helper
@@ -180,6 +182,16 @@
     # require enabling PolKit integration on some desktop environments (e.g. Plasma).
     polkitPolicyOwners = [ "ethan" ];
   };
+
+  # Hyprland Setup
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+    #portalPackage = inputs.hyprland-portal.packages."x86_64-linux".xdg-desktop-portal-hyprland;
+  };
+  programs.dconf.enable = true;
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   # Configure fonts
   fonts = {

@@ -7,5 +7,7 @@
     ./kitty/default.nix
     ./tofi/default.nix
     ./zsh/default.nix
+    ./hyprland/default.nix
+    ./spicetify/default.nix
   ];
 }
