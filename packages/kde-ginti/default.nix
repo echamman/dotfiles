@@ -5,10 +5,10 @@ let
 in
 stdenv.mkDerivation {
   pname = "kde-${pluginName}";
-  version = "0.3";
+  version = "0.5";
   src = fetchTarball {
-    url = "https://github.com/dhruv8sh/plasma6-desktopindicator-gnome/archive/refs/tags/v0.3.tar.gz";
-    sha256 = "sha256:1d2az907c3y48b0ydxhwz4isr3xn9hl5qp8ii1s76l8ld9hkpny0";
+    url = "https://github.com/dhruv8sh/plasma6-desktopindicator-gnome/archive/refs/tags/v0.5.tar.gz";
+    sha256 = "sha256:1vqkz68fnb15690vjhxwzqyby8z86b65g040r58kwx40q489gb0v";
   };
 
   # Without this plasma can't properly find the format
