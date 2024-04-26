@@ -79,6 +79,7 @@
     reaper
     inputs.old-yabridge-nixpkgs.legacyPackages.${system}.yabridge
     yabridgectl
+    (callPackage ../packages/kde-ginti { })
   ];
 
   # Git config
