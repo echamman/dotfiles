@@ -84,7 +84,7 @@
 
   # Musnix Config
   musnix = {
-    enable = true;
+    enable = false;
     kernel.realtime = false;
   };
 
@@ -155,6 +155,7 @@
     mullvad-vpn
     dunst
     libnotify
+    fuse
 
     # Nix Utilities
     nh  # Nix Helper

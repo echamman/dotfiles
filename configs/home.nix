@@ -31,6 +31,11 @@
     iotop # io monitoring
     iftop # network monitoring
     htop 
+    fzf
+    eza
+    bat
+    delta
+    neovim
 
     # archives
     zip
@@ -42,7 +47,7 @@
     # utils
     rofi-wayland
     vlc
-    caffeine-ng
+    # caffeine-ng
     ncdu
     waybar
     swww
@@ -60,6 +65,9 @@
     firefox
     element-desktop
     google-chrome  # For work
+    
+    # Games
+    prismlauncher
 
     # system call monitoring
     strace # system call monitoring
