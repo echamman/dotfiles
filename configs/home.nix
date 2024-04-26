@@ -80,6 +80,7 @@
     inputs.old-yabridge-nixpkgs.legacyPackages.${system}.yabridge
     yabridgectl
     (callPackage ../packages/kde-ginti { })
+    (callPackage ../packages/kde-window-title-applet { })
   ];
 
   # Git config
