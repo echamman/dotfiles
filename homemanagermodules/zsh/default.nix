@@ -7,6 +7,9 @@
 
   # Install zsh if desired
   config = lib.mkIf config.zsh.enable {
+
+    home.file.".config/bat/themes/rose-pine-moon.tmTheme".source = ./bat/rose-pine-moon.tmTheme;
+
     programs.zsh = {
       enable = true;
       enableCompletion = true;
@@ -40,6 +43,7 @@
       shellAliases = {
         ls = "eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions";
         dots = "cd ~/.dotfiles";
+        cat = "bat";
         nf = "neofetch";
 
         # Nix specific 
@@ -63,6 +67,7 @@
     home.packages = with pkgs; [
       thefuck
       fzf
+      dig
     ];
 
   };
