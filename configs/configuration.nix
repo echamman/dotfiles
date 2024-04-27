@@ -70,6 +70,12 @@
     drivers = [ pkgs.gutenprint pkgs.cnijfilter2 ];
   };
 
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+    openFirewall = true;
+  };
+
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -117,6 +123,12 @@
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     FLAKE = "/home/ethan/.dotfiles";
+  };
+
+  # Support 32bit drivers Mesa
+  hardware.opengl = {
+    enable = true;
+    driSupport32Bit = true;
   };
 
   # Tailscale

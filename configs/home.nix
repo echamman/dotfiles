@@ -79,8 +79,11 @@
     reaper
     inputs.old-yabridge-nixpkgs.legacyPackages.${system}.yabridge
     yabridgectl
+
+    # KDE Plugins
     (callPackage ../packages/kde-ginti { })
     (callPackage ../packages/kde-window-title-applet { })
+    #(callPackage ../packages/kde-plasmusic-toolbar { })
   ];
 
   # Git config
