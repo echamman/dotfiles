@@ -83,7 +83,7 @@
     # KDE Plugins
     (callPackage ../packages/kde-ginti { })
     (callPackage ../packages/kde-window-title-applet { })
-    #(callPackage ../packages/kde-plasmusic-toolbar { })
+    (callPackage ../packages/kde-plasmusic-toolbar { })
   ];
 
   # Git config
