@@ -7,7 +7,17 @@
     ../homemanagermodules
     inputs.nix-colors.homeManagerModules.default
     inputs.spicetify-nix.homeManagerModules.spicetify
+    inputs.nixneovim.nixosModules.default
   ];
+
+  # Configure user nixpkgs to allow unfree packages and add overlays
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = [
+      inputs.nixneovim.overlays.default
+      inputs.nixneovimplugins.overlays.default
+    ];
+  };
 
   home.username = "ethan";
   home.homeDirectory = "/home/ethan";
@@ -35,7 +45,6 @@
     eza
     bat
     delta
-    neovim
 
     # archives
     zip
@@ -43,11 +52,12 @@
     unzip
     p7zip
     unrar
+    cabextract
 
     # utils
     rofi-wayland
     vlc
-    # caffeine-ng
+    #caffeine-ng
     ncdu
     waybar
     swww
@@ -99,6 +109,7 @@
   zsh.enable = true;
   hyprland.enable = true;
   spicetify.enable = true;
+  neovim.enable = true; 
 
   home.stateVersion = "23.11";
 
