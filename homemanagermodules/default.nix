@@ -9,6 +9,5 @@
     ./zsh/default.nix
     ./hyprland/default.nix
     ./spicetify/default.nix
-    ./neovim/default.nix
   ];
 }

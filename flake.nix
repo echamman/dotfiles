@@ -24,10 +24,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # Neovim Nix Flake
-    nixneovim.url = "github:nixneovim/nixneovim";
-    nixneovimplugins.url = "github:jooooscha/nixpkgs-vim-extra-plugins";
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, grub2-themes, spicetify-nix, ... }:
@@ -51,6 +47,7 @@
             home-manager.nixosModules.home-manager
             {
               home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.ethan = import ./configs/home.nix;
             }
