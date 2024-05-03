@@ -50,6 +50,7 @@
 
     # KDE
     displayManager.sddm.enable = true;
+    displayManager.sddm.wayland.enable = true;
     #displayManager.sddm.theme = "rose-pine";
     desktopManager.plasma6.enable = true;
     displayManager.autoLogin.enable = false;
