@@ -18,6 +18,12 @@
 
     # Spicetify 
     spicetify-nix.url = "github:the-argus/spicetify-nix";
+    
+    # Nixvim 
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # home-manager, used for managing user configuration
     home-manager = {

@@ -7,6 +7,7 @@
     ../homemanagermodules
     inputs.nix-colors.homeManagerModules.default
     inputs.spicetify-nix.homeManagerModules.spicetify
+    inputs.nixvim.homeManagerModules.nixvim
   ];
 
   home.username = "ethan";
@@ -35,7 +36,6 @@
     eza
     bat
     delta
-    neovim
 
     # archives
     zip
@@ -99,6 +99,7 @@
   zsh.enable = true;
   hyprland.enable = true;
   spicetify.enable = true;
+  neovim.enable = true;
 
   home.stateVersion = "23.11";
 

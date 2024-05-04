@@ -91,7 +91,7 @@
 
   # Musnix Config
   musnix = {
-    enable = false;
+    enable = true;
     kernel.realtime = false;
   };
 
