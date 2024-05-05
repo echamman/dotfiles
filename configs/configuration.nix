@@ -89,6 +89,13 @@
     jack.enable = true;
   };
 
+  security.pam.services.swaylock = {
+    text = ''
+      auth include login
+    '';
+  };
+    
+
   # Musnix Config
   musnix = {
     enable = true;

@@ -11,5 +11,7 @@
     ./spicetify/default.nix
     ./neovim/default.nix
     ./waybar/default.nix
+    ./swayidle/default.nix
+    ./swaylock/default.nix
   ];
 }

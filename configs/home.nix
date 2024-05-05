@@ -50,6 +50,7 @@
     # caffeine-ng
     ncdu
     swww
+    grimblast
 
     # networking tools
     nmap # A utility for network discovery and security auditing
@@ -100,6 +101,8 @@
   waybar.enable = true;
   spicetify.enable = true;
   neovim.enable = true;
+  swaylock.enable = true;
+  swayidle.enable = true;
 
   home.stateVersion = "23.11";
 

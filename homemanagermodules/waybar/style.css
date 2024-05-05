@@ -1,13 +1,15 @@
 @import "./rose-pine-moon.css";
 *{
-    font-family: FiraCode;
+    font-family: FiraCode Nerd Font Mono;
     font-size: 13px;
     min-height: 0;
     color: @text;
+    margin: 0;
+    padding: 0;
 }
 
 window#waybar {
-    background-color: transparent;
+    background-color: @surface;
 }
 
 #workspaces{
@@ -26,7 +28,7 @@ window#waybar {
 }
 
 #workspaces button.active, #workspaces button.focused{
-    padding: 0 22px;
+    padding: 0 24px;
     box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;    
     background: @foam;
 }
