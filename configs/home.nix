@@ -49,7 +49,6 @@
     vlc
     # caffeine-ng
     ncdu
-    waybar
     swww
 
     # networking tools
@@ -98,6 +97,7 @@
   tofi.enable = true;
   zsh.enable = true;
   hyprland.enable = true;
+  waybar.enable = true;
   spicetify.enable = true;
   neovim.enable = true;
 

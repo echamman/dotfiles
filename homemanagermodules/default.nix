@@ -10,5 +10,6 @@
     ./hyprland/default.nix
     ./spicetify/default.nix
     ./neovim/default.nix
+    ./waybar/default.nix
   ];
 }
