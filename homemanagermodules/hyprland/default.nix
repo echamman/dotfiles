@@ -7,8 +7,6 @@
   # Enable hyprland if desired
   config = lib.mkIf config.hyprland.enable {
     home.file.".config/hypr/theme.conf".source = ./theme.conf;
-    home.file.".config/hypr/hypridle.conf".source = ./conf/hypridle.conf;
-    home.file.".config/hypr/hyprlock.conf".source = ./conf/hyprlock.conf;
 
     # Enable and configure hyprland
     wayland.windowManager.hyprland = {
