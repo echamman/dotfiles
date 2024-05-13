@@ -21,6 +21,12 @@
 
   colorScheme = inputs.nix-colors.colorSchemes.rose-pine-moon;
 
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    BROWSER = "firefox";
+    TERMINAL = "kitty";
+  };
+
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
 
@@ -36,6 +42,8 @@
     eza
     bat
     delta
+    neovim
+    inputs.superfile.packages.${system}.default
 
     # archives
     zip
@@ -77,7 +85,8 @@
     # Music Production
     bitwig-studio
     reaper
-    inputs.old-yabridge-nixpkgs.legacyPackages.${system}.yabridge
+    #inputs.old-yabridge-nixpkgs.legacyPackages.${system}.yabridge
+    yabridge
     yabridgectl
 
     # KDE Plugins
@@ -100,7 +109,7 @@
   hyprland.enable = true;
   waybar.enable = true;
   spicetify.enable = true;
-  neovim.enable = true;
+  #neovim.enable = true;
   swaylock.enable = true;
   swayidle.enable = true;
 

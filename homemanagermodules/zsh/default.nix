@@ -45,6 +45,9 @@
         dots = "cd ~/.dotfiles";
         cat = "bat";
         nf = "neofetch";
+        spf = "superfile";
+
+        ssh = "kitten ssh";
 
         # Nix specific 
         rebuild = "nh os switch ~/.dotfiles --ask";

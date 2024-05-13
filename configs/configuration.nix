@@ -25,6 +25,10 @@
     };
   };
 
+  # Use newest kernel
+  #boot.kernelPackages = inputs.old-kernel-nixpkgs.legacyPackages."x86_64-linux".linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   boot.supportedFilesystems = [ "ntfs" ];
 
   networking.hostName = "enix"; # Define your hostname.
@@ -131,6 +135,7 @@
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     FLAKE = "/home/ethan/.dotfiles";
+    TERMINAL = "kitty";
   };
 
   # Support 32bit drivers Mesa
