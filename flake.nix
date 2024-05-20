@@ -4,9 +4,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    # Old kernel
-    old-kernel-nixpkgs.url = "github:nixos/nixpkgs/e89cf1c932006531f454de7d652163a9a5c86668";
-
     # Older yabridge package
     old-yabridge-nixpkgs.url = "github:nixos/nixpkgs/fd04bea4cbf76f86f244b9e2549fca066db8ddff";
 

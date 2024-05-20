@@ -38,11 +38,11 @@
     iotop # io monitoring
     iftop # network monitoring
     htop 
-    fzf
-    eza
-    bat
-    delta
-    neovim
+    fzf # Fuzzy Finder
+    eza # ls replacement
+    bat # cat replacement
+    delta # git diff
+    neovim # neovim
     inputs.superfile.packages.${system}.default
 
     # archives
@@ -56,9 +56,9 @@
     rofi-wayland
     vlc
     # caffeine-ng
-    ncdu
-    swww
-    grimblast
+    ncdu  # Disk space sniffer
+    swww  # Wallpaper utility
+    grimblast # Screenshot util
 
     # networking tools
     nmap # A utility for network discovery and security auditing
@@ -105,6 +105,7 @@
   starship.enable = true; 
   kitty.enable = true;
   tofi.enable = true;
+  fuzzel.enable = true;
   zsh.enable = true;
   hyprland.enable = true;
   waybar.enable = true;

@@ -26,8 +26,7 @@
   };
 
   # Use newest kernel
-  #boot.kernelPackages = inputs.old-kernel-nixpkgs.legacyPackages."x86_64-linux".linuxPackages_latest;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
 
   boot.supportedFilesystems = [ "ntfs" ];
 
@@ -181,12 +180,12 @@
     dunst
     libnotify
     fuse
+    distrobox
 
     # Nix Utilities
     nh  # Nix Helper
     nix-output-monitor
     nvd
-
   ];
 
   # Custom Modules
