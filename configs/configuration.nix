@@ -151,6 +151,7 @@
 
   # Virtualisation enable
   virtualisation.virtualbox.host.enable = true;
+  virtualisation.podman.enable = true;
   
   # System wide ZSH enable
   programs.zsh.enable = true;
@@ -210,7 +211,7 @@
 
   # Hyprland Setup
   programs.hyprland = {
-    enable = true;
+    enable = false;
     xwayland.enable = true;
     #portalPackage = inputs.hyprland-portal.packages."x86_64-linux".xdg-desktop-portal-hyprland;
   };

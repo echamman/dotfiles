@@ -53,12 +53,11 @@
     unrar
 
     # utils
-    rofi-wayland
     vlc
-    # caffeine-ng
     ncdu  # Disk space sniffer
     swww  # Wallpaper utility
     grimblast # Screenshot util
+    usbutils
 
     # networking tools
     nmap # A utility for network discovery and security auditing
@@ -107,7 +106,7 @@
   tofi.enable = true;
   fuzzel.enable = true;
   zsh.enable = true;
-  hyprland.enable = true;
+  hyprland.enable = false;
   waybar.enable = true;
   spicetify.enable = true;
   #neovim.enable = true;
