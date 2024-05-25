@@ -104,14 +104,10 @@
   starship.enable = true; 
   kitty.enable = true;
   tofi.enable = true;
-  fuzzel.enable = true;
   zsh.enable = true;
-  hyprland.enable = false;
   waybar.enable = true;
   spicetify.enable = true;
   #neovim.enable = true;
-  swaylock.enable = true;
-  swayidle.enable = true;
 
   home.stateVersion = "23.11";
 
