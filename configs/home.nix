@@ -31,7 +31,7 @@
   home.packages = with pkgs; [
 
     # Terminal
-    neofetch
+    fastfetch
     nnn # terminal file manager
     btop  # replacement of htop/nmon
     nvtopPackages.amd
@@ -58,6 +58,7 @@
     swww  # Wallpaper utility
     grimblast # Screenshot util
     usbutils
+    wget
 
     # networking tools
     nmap # A utility for network discovery and security auditing

@@ -44,7 +44,7 @@
         ls = "eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions";
         dots = "cd ~/.dotfiles";
         cat = "bat";
-        nf = "neofetch";
+        nf = "fastfetch";
         spf = "superfile";
 
         ssh = "kitten ssh";
