@@ -59,6 +59,8 @@
     grimblast # Screenshot util
     usbutils
     wget
+    easyeffects
+    mission-center
 
     # networking tools
     nmap # A utility for network discovery and security auditing
@@ -93,6 +95,7 @@
     (callPackage ../packages/kde-ginti { })
     (callPackage ../packages/kde-window-title-applet { })
     (callPackage ../packages/kde-plasmusic-toolbar { })
+    (callPackage ../packages/kde-wunderground { })
   ];
 
   # Git config
@@ -110,6 +113,7 @@
   spicetify.enable = true;
   #neovim.enable = true;
 
+  # The version number that was first installed. DO NOT CHANGE
   home.stateVersion = "23.11";
 
   # Let home Manager install and manage itself.

@@ -171,7 +171,6 @@
     lutris
     protontricks
     r2modman
-    steamtinkerlaunch
     xwaylandvideobridge
 
     # System wide utilities
