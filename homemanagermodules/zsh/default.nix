@@ -50,7 +50,7 @@
         ssh = "kitten ssh";
 
         # Nix specific 
-        rebuild = "nh os switch ~/.dotfiles --ask";
+        rebuild = "nh os switch ~/.dotfiles --ask && flatpak update -y";
         rebuild-dry = "nh os switch ~/.dotfiles --dry";
         rebuildhome = "nh home switch ~/.dotfiles --ask";
         update = "nix flake update";

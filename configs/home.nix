@@ -87,8 +87,8 @@
     # Music Production
     bitwig-studio
     reaper
-    #inputs.old-yabridge-nixpkgs.legacyPackages.${system}.yabridge
-    yabridge
+    inputs.old-yabridge-nixpkgs.legacyPackages.${system}.yabridge
+    #yabridge
     yabridgectl
 
     # KDE Plugins
