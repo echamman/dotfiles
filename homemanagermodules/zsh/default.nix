@@ -50,12 +50,13 @@
         ssh = "kitten ssh";
 
         # Nix specific 
-        rebuild = "nh os switch ~/.dotfiles --ask && flatpak update -y";
+        rebuild = "nh os switch ~/.dotfiles --ask && echo \"--flatpak updates--\" && flatpak update -y";
         rebuild-dry = "nh os switch ~/.dotfiles --dry";
         rebuildhome = "nh home switch ~/.dotfiles --ask";
         update = "nix flake update";
         clean = "sudo nix profile wipe-history --profile /nix/var/nix/profiles/system  --older-than 7d";
         nix-gc = "sudo nix-collect-garbage";
+        nixup = "dots && update && rebuild";      #Does it all
       };
       history.size = 10000;
       history.path = "${config.xdg.dataHome}/zsh/history";
@@ -68,7 +69,7 @@
     };
 
     home.packages = with pkgs; [
-      thefuck
+      #thefuck
       fzf
       dig
     ];

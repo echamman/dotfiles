@@ -75,6 +75,9 @@
     firefox
     element-desktop
     google-chrome  # For work
+    kdePackages.kdenlive
+    glaxnimate # For KDENLive
+    darktable
     
     # Games
     prismlauncher
