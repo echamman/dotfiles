@@ -6,7 +6,7 @@
 
     # Older yabridge package
     old-yabridge-nixpkgs.url = "github:nixos/nixpkgs/fd04bea4cbf76f86f244b9e2549fca066db8ddff";
-
+    
     # For grub theme
     grub2-themes.url = "github:vinceliuice/grub2-themes";
 
@@ -17,7 +17,10 @@
     nix-colors.url = "github:misterio77/nix-colors";
 
     # Spicetify 
-    spicetify-nix.url = "github:the-argus/spicetify-nix";
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Superfile
     superfile.url = "github:MHNightCat/superfile";

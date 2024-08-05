@@ -6,7 +6,7 @@
   [ 
     ../homemanagermodules
     inputs.nix-colors.homeManagerModules.default
-    inputs.spicetify-nix.homeManagerModules.spicetify
+    inputs.spicetify-nix.homeManagerModules.default
     inputs.nixvim.homeManagerModules.nixvim
   ];
 
@@ -61,6 +61,7 @@
     wget
     easyeffects
     mission-center
+    remmina #RDP client
 
     # networking tools
     nmap # A utility for network discovery and security auditing
@@ -81,6 +82,7 @@
     
     # Games
     prismlauncher
+    dolphin-emu
 
     # system call monitoring
     strace # system call monitoring
