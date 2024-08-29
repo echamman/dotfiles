@@ -116,6 +116,7 @@
   zsh.enable = true;
   waybar.enable = true;
   spicetify.enable = true;
+  obs-studio.enable = true;
   #neovim.enable = true;
 
   # The version number that was first installed. DO NOT CHANGE
