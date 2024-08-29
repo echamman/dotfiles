@@ -76,7 +76,7 @@
 
   services.avahi = {
     enable = true;
-    nssmdns = true;
+    nssmdns4 = true;
     openFirewall = true;
   };
 
@@ -138,9 +138,9 @@
   };
 
   # Support 32bit drivers Mesa
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
 
   # Tailscale

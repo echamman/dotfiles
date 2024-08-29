@@ -41,7 +41,7 @@
     fzf # Fuzzy Finder
     eza # ls replacement
     bat # cat replacement
-    delta # git diff
+    #delta # git diff
     neovim # neovim
     inputs.superfile.packages.${system}.default
 
@@ -59,7 +59,7 @@
     grimblast # Screenshot util
     usbutils
     wget
-    easyeffects
+    #easyeffects
     mission-center
     remmina #RDP client
 
