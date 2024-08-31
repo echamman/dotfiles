@@ -62,6 +62,7 @@
     #easyeffects
     mission-center
     remmina #RDP client
+    simple-scan #scan GUI
 
     # networking tools
     nmap # A utility for network discovery and security auditing

@@ -80,6 +80,9 @@
     openFirewall = true;
   };
 
+  # Scanner enable
+  hardware.sane.enable = true;
+
   # Enable sound with pipewire.
   #sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -108,7 +111,7 @@
   users.users.ethan = {
     isNormalUser = true;
     description = "ethan";
-    extraGroups = [ "networkmanager" "wheel" "corectrl" "audio" "vboxusers"];
+    extraGroups = [ "networkmanager" "wheel" "corectrl" "audio" "vboxusers" "scanner" "lp"];
     shell = pkgs.zsh;
   };
 
