@@ -80,6 +80,7 @@
     kdePackages.kdenlive
     glaxnimate # For KDENLive
     darktable
+    onlyoffice-bin
     
     # Games
     prismlauncher

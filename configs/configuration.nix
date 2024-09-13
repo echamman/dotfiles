@@ -95,6 +95,8 @@
     jack.enable = true;
   };
 
+  services.onedrive.enable = true;
+
   security.pam.services.swaylock = {
     text = ''
       auth include login
