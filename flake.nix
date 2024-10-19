@@ -21,9 +21,6 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # Superfile
-    superfile.url = "github:MHNightCat/superfile";
     
     # Nixvim 
     nixvim = {

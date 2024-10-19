@@ -18,8 +18,8 @@ in
     programs.spicetify =
       {
         enable = true;
-        theme = spicePkgs.themes.text;
-        colorScheme = "RosePineMoon";
+        theme = spicePkgs.themes.sleek;
+        colorScheme = "RosePine";
 
         enabledExtensions = with spicePkgs.extensions; [
           fullAppDisplay

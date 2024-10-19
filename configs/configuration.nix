@@ -103,6 +103,11 @@
     '';
   };
     
+  #Add extra udev rules
+  #0483 df11 is for the daisy seed
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTR{idVendor}=="0483", ATTR{idProduct}=="df11", MODE="0664", GROUP="wheel"
+  '';
 
   # Musnix Config
   musnix = {

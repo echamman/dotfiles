@@ -43,7 +43,6 @@
     bat # cat replacement
     #delta # git diff
     neovim # neovim
-    inputs.superfile.packages.${system}.default
 
     # archives
     zip
@@ -63,12 +62,13 @@
     mission-center
     remmina #RDP client
     simple-scan #scan GUI
+    dfu-util
 
     # networking tools
     nmap # A utility for network discovery and security auditing
 
     # Applications
-    qbittorrent-qt5
+    qbittorrent
     vscode
     discord
     vesktop # Discord alt
@@ -118,7 +118,7 @@
   zsh.enable = true;
   waybar.enable = true;
   spicetify.enable = true;
-  obs-studio.enable = true;
+  obs-studio.enable = false;
   #neovim.enable = true;
 
   # The version number that was first installed. DO NOT CHANGE

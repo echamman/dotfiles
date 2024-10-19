@@ -38,6 +38,10 @@
           *)            fzf --preview "$show_file_or_dir_preview" "$@" ;;
         esac
       }
+
+      GCC_PATH=~/Developer/gcc-arm-none-eabi-10-2020-q4-major/bin
+      export PATH=$GCC_PATH:$PATH
+
       '';
 
       shellAliases = {
