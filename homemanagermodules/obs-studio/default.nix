@@ -14,7 +14,7 @@
         wlrobs
         obs-backgroundremoval
         obs-pipewire-audio-capture
-        yuobs-vkcapture
+        obs-vkcapture
       ];
     };
   };

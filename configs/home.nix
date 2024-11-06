@@ -56,13 +56,15 @@
     ncdu  # Disk space sniffer
     swww  # Wallpaper utility
     grimblast # Screenshot util
-    usbutils
+    usbutils  # USB drivers and utilities
     wget
     #easyeffects
     mission-center
     remmina #RDP client
     simple-scan #scan GUI
-    dfu-util
+    dfu-util  # Flash DFU devices over USB
+    screen    # Terminal monitor
+    assimp    # Asset Importer for games
 
     # networking tools
     nmap # A utility for network discovery and security auditing
@@ -94,8 +96,8 @@
     # Music Production
     bitwig-studio
     reaper
-    inputs.old-yabridge-nixpkgs.legacyPackages.${system}.yabridge
-    #yabridge
+    #inputs.old-yabridge-nixpkgs.legacyPackages.${system}.yabridge
+    yabridge
     yabridgectl
 
     # KDE Plugins
@@ -118,7 +120,7 @@
   zsh.enable = true;
   waybar.enable = true;
   spicetify.enable = true;
-  obs-studio.enable = false;
+  obs-studio.enable = true;
   #neovim.enable = true;
 
   # The version number that was first installed. DO NOT CHANGE
