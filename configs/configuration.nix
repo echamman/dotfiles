@@ -84,7 +84,6 @@
   hardware.sane.enable = true;
 
   # Enable sound with pipewire.
-  #sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -246,7 +245,7 @@
       ubuntu_font_family
       open-sans
       # nerdfonts
-      (nerdfonts.override { fonts = [ "FiraCode" ]; })
+      nerd-fonts.fira-code
     ];
 
     # Enable default fonts

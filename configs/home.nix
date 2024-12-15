@@ -59,12 +59,14 @@
     usbutils  # USB drivers and utilities
     wget
     #easyeffects
-    mission-center
+    #mission-center
     remmina #RDP client
     simple-scan #scan GUI
     dfu-util  # Flash DFU devices over USB
     screen    # Terminal monitor
     assimp    # Asset Importer for games
+    gphoto2   # Handles digital camera file transfer
+    alsa-scarlett-gui # Focusrite
 
     # networking tools
     nmap # A utility for network discovery and security auditing
@@ -83,6 +85,8 @@
     glaxnimate # For KDENLive
     darktable
     onlyoffice-bin
+    kicad
+    pinta     #paint
     
     # Games
     prismlauncher
