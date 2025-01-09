@@ -100,8 +100,7 @@
     # Music Production
     bitwig-studio
     reaper
-    #inputs.old-yabridge-nixpkgs.legacyPackages.${system}.yabridge
-    yabridge
+    inputs.nixpkgs-stable.legacyPackages.${system}.yabridge # Use NixPkgs Stable yabridge for wine-staging 9.20
     yabridgectl
 
     # KDE Plugins

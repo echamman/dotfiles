@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, outputs, ... }:
+{ config, pkgs, pkgs-stable, inputs, outputs, ... }:
 
 {
   imports =
@@ -24,9 +24,6 @@
       screen = "ultrawide2k";
     };
   };
-
-  # Use newest kernel
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
 
   boot.supportedFilesystems = [ "ntfs" ];
 
@@ -54,7 +51,6 @@
     # KDE
     displayManager.sddm.enable = true;
     displayManager.sddm.wayland.enable = true;
-    #displayManager.sddm.theme = "rose-pine";
     desktopManager.plasma6.enable = true;
     displayManager.autoLogin.enable = false;
 
@@ -81,10 +77,12 @@
   };
 
   # Scanner enable
-  hardware.sane.enable = true;
+  hardware.sane = {
+    enable = true;
+  };
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -104,9 +102,12 @@
     
   #Add extra udev rules
   #0483 df11 is for the daisy seed
-  services.udev.extraRules = ''
+  services.udev = {
+    extraRules = ''
     SUBSYSTEM=="usb", ATTR{idVendor}=="0483", ATTR{idProduct}=="df11", MODE="0664", GROUP="wheel"
   '';
+    packages = [ pkgs.utsushi ];
+  };
 
   # Musnix Config
   musnix = {
@@ -170,9 +171,7 @@
 
     # Wine Packages
     wineWowPackages.stable
-    #wine64
     winetricks
-    #wineWowPackages.waylandFull
 
     # gaming
     gamescope
@@ -261,6 +260,7 @@
     };
   };
 
-  system.stateVersion = "23.11"; # Did you read the comment?
+  # Do not update
+  system.stateVersion = "23.11";
 
 }

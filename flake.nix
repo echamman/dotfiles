@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixpkgs-24.11-darwin";
 
     # Older yabridge package
     old-yabridge-nixpkgs.url = "github:nixos/nixpkgs/fd04bea4cbf76f86f244b9e2549fca066db8ddff";
@@ -35,11 +36,12 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, grub2-themes, spicetify-nix, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, grub2-themes, spicetify-nix, ... }:
 
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      pkgs-stable = nixpkgs-stable.legacyPackages.${system};
       #inherit (self) outputs;
       
     in
