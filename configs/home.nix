@@ -58,8 +58,6 @@
     grimblast # Screenshot util
     usbutils  # USB drivers and utilities
     wget
-    #easyeffects
-    #mission-center
     remmina #RDP client
     simple-scan #scan GUI
     dfu-util  # Flash DFU devices over USB
@@ -87,10 +85,12 @@
     onlyoffice-bin
     kicad
     pinta     #paint
+    inputs.old-orcaslicer-nixpkgs.legacyPackages.${system}.orca-slicer
     
     # Games
     prismlauncher
     dolphin-emu
+    clonehero
 
     # system call monitoring
     strace # system call monitoring

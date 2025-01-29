@@ -5,8 +5,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixpkgs-24.11-darwin";
 
-    # Older yabridge package
-    old-yabridge-nixpkgs.url = "github:nixos/nixpkgs/fd04bea4cbf76f86f244b9e2549fca066db8ddff";
+    # Older orca slicer package
+    old-orcaslicer-nixpkgs.url = "github:nixos/nixpkgs/aa1203429f56d2e816a77fda34f069705e975f97";
     
     # For grub theme
     grub2-themes.url = "github:vinceliuice/grub2-themes";

@@ -30,6 +30,11 @@
   networking.hostName = "enix"; # Define your hostname.
   networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
+  networking.firewall = {
+    enable = true;
+    allowedUDPPorts = [ 1990 2021 ];
+  };
+
   # Enable networking
   networking.networkmanager.enable = true;
   networking.nameservers = ["10.0.0.250" "10.0.0.250"];
@@ -99,6 +104,15 @@
       auth include login
     '';
   };
+
+  # For Lutris
+  systemd.extraConfig = "DefaultLimitNOFILE=524288";
+  security.pam.loginLimits = [{
+    domain = "ethan";
+    type = "hard";
+    item = "nofile";
+    value = "524288";
+  }];
     
   #Add extra udev rules
   #0483 df11 is for the daisy seed
