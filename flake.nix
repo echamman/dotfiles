@@ -22,6 +22,12 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Overwitch - An overbridge compat layer
+    overwitch = {
+       url = "github:Are10/flake-overwitch/main";
+       inputs.nixpkgs.follows = "nixpkgs";
+    };
     
     # Nixvim 
     nixvim = {
@@ -36,7 +42,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, grub2-themes, spicetify-nix, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, grub2-themes, spicetify-nix, overwitch, ... }:
 
     let
       system = "x86_64-linux";
@@ -66,6 +72,7 @@
             inputs.home-manager.nixosModules.default
             grub2-themes.nixosModules.default
             inputs.musnix.nixosModules.musnix
+            overwitch.nixosModules.default
           ];
         };
       };

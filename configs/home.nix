@@ -65,6 +65,8 @@
     assimp    # Asset Importer for games
     gphoto2   # Handles digital camera file transfer
     alsa-scarlett-gui # Focusrite
+    moonlight-qt
+    syncthing
 
     # networking tools
     nmap # A utility for network discovery and security auditing
@@ -83,6 +85,7 @@
     glaxnimate # For KDENLive
     darktable
     onlyoffice-bin
+    libreoffice-qt6-fresh
     kicad
     pinta     #paint
     inputs.old-orcaslicer-nixpkgs.legacyPackages.${system}.orca-slicer
@@ -102,6 +105,7 @@
     reaper
     inputs.nixpkgs-stable.legacyPackages.${system}.yabridge # Use NixPkgs Stable yabridge for wine-staging 9.20
     yabridgectl
+    elektroid
 
     # KDE Plugins
     (callPackage ../packages/kde-ginti { })

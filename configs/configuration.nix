@@ -27,12 +27,31 @@
 
   boot.supportedFilesystems = [ "ntfs" ];
 
+  # VirtualBox fix https://github.com/NixOS/nixpkgs/issues/363887#issuecomment-2536693220 
+  boot.kernelParams = [ "kvm.enable_virt_at_load=0" ];
+
   networking.hostName = "enix"; # Define your hostname.
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
 
   networking.firewall = {
     enable = true;
-    allowedUDPPorts = [ 1990 2021 ];
+
+    /*allowedTCPPorts = [ 
+      #Sunshine
+      47984 47989 47990 48010 
+    ];*/
+
+    allowedUDPPorts = [ 
+      # Bambu 
+      1990 2021 
+    ];
+
+    /*allowedUDPPortRanges = [
+      #Sunshine
+      { from = 47998; to = 48000; }
+      { from = 8000; to = 8010; }
+    ];*/
+    
   };
 
   # Enable networking
@@ -115,10 +134,14 @@
   }];
     
   #Add extra udev rules
-  #0483 df11 is for the daisy seed
   services.udev = {
     extraRules = ''
+    # Daisy Seed
     SUBSYSTEM=="usb", ATTR{idVendor}=="0483", ATTR{idProduct}=="df11", MODE="0664", GROUP="wheel"
+    #Pi Pico
+    SUBSYSTEM=="usb", ATTR{idVendor}=="2e8a", ATTR{idProduct}=="0003", MODE="0664", GROUP="wheel"
+    # Elegoo Nano
+    SUBSYSTEM=="usb", ATTR{idVendor}=="1a86", ATTR{idProduct}=="7523", MODE="0664", GROUP="wheel"
   '';
     packages = [ pkgs.utsushi ];
   };
@@ -239,6 +262,27 @@
   programs.dconf.enable = true;
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
+  #Sunshine game streaming
+  services.sunshine = {
+    enable = true;
+    autoStart = false;
+    capSysAdmin = true;
+    openFirewall = true;
+    
+  };
+
+  services = {
+    syncthing = {
+        enable = true;
+        group = "users";
+        user = "ethan";
+        dataDir = "/home/ethan/Documents";    # Default folder for new synced folders
+        configDir = "/home/ethan/Documents/.config/syncthing";   # Folder for Syncthing's settings and keys
+    };
+};
+
+services.overwitch.enable = true; 
 
   # Configure fonts
   fonts = {
