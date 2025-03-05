@@ -143,7 +143,10 @@
     # Elegoo Nano
     SUBSYSTEM=="usb", ATTR{idVendor}=="1a86", ATTR{idProduct}=="7523", MODE="0664", GROUP="wheel"
   '';
-    packages = [ pkgs.utsushi ];
+    packages = with pkgs; [ 
+      utsushi 
+      teensy-udev-rules
+    ];
   };
 
   # Musnix Config
@@ -216,7 +219,7 @@
     lutris
     protontricks
     r2modman
-    xwaylandvideobridge
+    kdePackages.xwaylandvideobridge
 
     # System wide utilities
     gparted
