@@ -5,12 +5,12 @@ let
 in
 stdenv.mkDerivation {
   pname = "kde-${pluginName}";
-  version = "0.5.5";
+  version = "0.9.0";
   src = pkgs.fetchFromGitHub {
     owner = "dhruv8sh";
     repo = "plasma6-window-title-applet";
-    rev = "6d6b939bb8138a8b1640cf2f6d395a3030d7bbaa";
-    hash = "sha256-dfJcRbUubv3/1PAWCFtNWzc8nyIcgTW39vryFLOOqzs=";
+    rev = "a6eaf5086a473919ed2fffc5d3b8d98237c2dd41";
+    hash = "sha256-pFXVySorHq5EpgsBz01vZQ0sLAy2UrF4VADMjyz2YLs=";
   };
   # Without this plasma can't properly find the format
   #patches = [ ../kde-ginti/metadata.patch ];

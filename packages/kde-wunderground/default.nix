@@ -5,12 +5,12 @@ let
 in
 stdenv.mkDerivation {
   pname = "kde-${pluginName}";
-  version = "0.1.4";
+  version = "3.4.1";
   src = pkgs.fetchFromGitHub {
     owner = "k-donn";
     repo = "plasmoid-wunderground";
-    rev = "a28e32d22d6ce71ed684403ca90ea92e1c71de73";
-    hash = "sha256-G4uNxi1/pi8XIPgiY4r0FCxvF0oUBxI8hVEbVSGYsrI=";
+    rev = "34521dadb9445586277bf8733a9d75a0bd8bb7c0";
+    hash = "sha256-qLfzq+e1DQ/VDyDiZ2dnK9cqz3JNStIXWDX/WbMwGDM=";
   };
 
   installPhase = ''

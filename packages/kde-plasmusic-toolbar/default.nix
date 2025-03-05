@@ -5,11 +5,11 @@ let
 in
 stdenv.mkDerivation {
   pname = "kde-${pluginName}";
-  version = "1.1.0";
+  version = "2.3.0";
   src = pkgs.fetchzip {
     stripRoot = false;
-    url = "https://github.com/ccatterina/plasmusic-toolbar/releases/download/v1.1.0/plasmusic-toolbar-v1.1.0.plasmoid";
-    sha256 = "sha256-8+07A3AmPStrJwPEeGDvsV3YX3YgX0P7AXaRJv9QJek=";
+    url = "https://github.com/ccatterina/plasmusic-toolbar/releases/download/v2.3.0/plasmusic-toolbar-v2.3.0.plasmoid";
+    sha256 = "sha256-a4+Tvu74qmbNxycj0d550RVljXrjgs5ibwoIlwhAqbs=";
     extension = "zip";
   };
 
