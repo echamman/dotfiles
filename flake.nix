@@ -5,6 +5,12 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixpkgs-24.11-darwin";
 
+    # Nix User Repository; NUR
+    nur.url = "github:nix-community/NUR";
+
+    # Nix Gaming 
+    nix-gaming.url = "github:fufexan/nix-gaming";
+
     # Older orca slicer package
     old-orcaslicer-nixpkgs.url = "github:nixos/nixpkgs/aa1203429f56d2e816a77fda34f069705e975f97";
     
@@ -42,12 +48,13 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, grub2-themes, spicetify-nix, overwitch, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, nix-gaming, nur, home-manager, grub2-themes, spicetify-nix, overwitch, ... }:
 
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       pkgs-stable = nixpkgs-stable.legacyPackages.${system};
+      pkgs-gaming = nix-gaming.packages.${pkgs.hostPlatform.system};
       #inherit (self) outputs;
       
     in
@@ -70,6 +77,7 @@
             }
 
             inputs.home-manager.nixosModules.default
+            nur.modules.nixos.default
             grub2-themes.nixosModules.default
             inputs.musnix.nixosModules.musnix
             overwitch.nixosModules.default

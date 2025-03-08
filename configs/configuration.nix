@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-stable, inputs, outputs, ... }:
+{ config, pkgs, pkgs-stable, pkgs-gaming, inputs, outputs, ... }:
 
 {
   imports =
@@ -168,6 +168,12 @@
   # Enable the Flakes feature and the accompanying new nix command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # Enable Cachix
+  nix.settings = {
+    substituters = ["https://nix-gaming.cachix.org"];
+    trusted-public-keys = ["nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="];
+  };
+
   # Automatic Garbage Collection
   nix.gc = {
     automatic = true;
@@ -212,6 +218,8 @@
     # Wine Packages
     wineWowPackages.stable
     winetricks
+    #pkgs-gaming.wine-tkg
+    inputs.nix-gaming.packages.${pkgs.system}.wine-tkg
 
     # gaming
     gamescope
@@ -229,6 +237,7 @@
     libnotify
     fuse
     distrobox
+    nur.repos.xddxdd.vk-hdr-layer # HDR for Vulkan
 
     # Nix Utilities
     nh  # Nix Helper
