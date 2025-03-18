@@ -226,7 +226,8 @@
     mangohud
     lutris
     protontricks
-    r2modman
+    #r2modman
+    (callPackage ../packages/r2modman { })
     kdePackages.xwaylandvideobridge
 
     # System wide utilities
