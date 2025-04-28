@@ -109,9 +109,10 @@
 
     # KDE Plugins
     (callPackage ../packages/kde-window-title-applet { })
-    (callPackage ../packages/kde-plasmusic-toolbar { })
+    plasmusic-toolbar
     (callPackage ../packages/kde-wunderground { })
     kara
+    kdePackages.wallpaper-engine-plugin
   ];
 
   # Git config
