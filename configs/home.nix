@@ -8,6 +8,7 @@
     inputs.nix-colors.homeManagerModules.default
     inputs.spicetify-nix.homeManagerModules.default
     inputs.nixvim.homeManagerModules.nixvim
+    inputs.zen-browser.homeModules.beta
   ];
 
   home.username = "ethan";
@@ -89,6 +90,8 @@
     kicad
     pinta     #paint
     inputs.old-orcaslicer-nixpkgs.legacyPackages.${system}.orca-slicer
+    obsidian
+    boxbuddy  # Manages distroboxes
     
     # Games
     prismlauncher
@@ -120,6 +123,15 @@
     enable = true;
     userName  = "echamman";
     userEmail = "e.hamman@telus.net";
+  };
+
+  programs.zen-browser = {
+    enable = true;
+    policies = {
+      DisableAppUpdate = true;
+      DisableTelemetry = true;
+      # find more options here: https://mozilla.github.io/policy-templates/
+    };
   };
 
   starship.enable = true; 

@@ -27,7 +27,7 @@
 
   boot.supportedFilesystems = [ "ntfs" ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_6_14;
 
   # VirtualBox fix https://github.com/NixOS/nixpkgs/issues/363887#issuecomment-2536693220 
   boot.kernelParams = [ "kvm.enable_virt_at_load=0" ];
@@ -191,7 +191,7 @@
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
-    FLAKE = "/home/ethan/.dotfiles";
+    NH_FLAKE = "/home/ethan/.dotfiles";
     TERMINAL = "kitty";
   };
 
@@ -209,7 +209,6 @@
 
   # Virtualisation enable
   virtualisation.virtualbox.host.enable = true;
-  virtualisation.podman.enable = true;
   
   # System wide ZSH enable
   programs.zsh.enable = true;
@@ -224,8 +223,6 @@
     inputs.nix-gaming.packages.${pkgs.system}.wine-tkg
 
     # gaming
-    gamescope
-    mangohud
     lutris
     protontricks
     r2modman
@@ -239,7 +236,6 @@
     dunst
     libnotify
     fuse
-    distrobox
     nur.repos.xddxdd.vk-hdr-layer # HDR for Vulkan
 
     # Nix Utilities
@@ -250,12 +246,13 @@
 
   # Custom Modules
   steam.enable = true;
+  distrobox.enable = true;
 
-  programs.corectrl = {
-    enable = true;
-    gpuOverclock.ppfeaturemask = "0xffffffff";
-    gpuOverclock.enable = true;
-  };
+  # programs.corectrl = {
+  #   enable = true;
+  #   gpuOverclock.ppfeaturemask = "0xffffffff";
+  #   gpuOverclock.enable = true;
+  # };
 
   programs.kdeconnect.enable = true;
 
@@ -267,7 +264,16 @@
     # require enabling PolKit integration on some desktop environments (e.g. Plasma).
     polkitPolicyOwners = [ "ethan" ];
   };
-
+  
+  # 1password zen browser
+  environment.etc = {
+  "1password/custom_allowed_browsers" = {
+    text = ''
+      .zen
+    ''; 
+    mode = "0755";
+  };
+};
   # Hyprland Setup
   programs.hyprland = {
     enable = false;

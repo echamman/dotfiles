@@ -32,16 +32,16 @@
     nixpkgs.config.packageOverrides = pkgs: {
       steam = pkgs.steam.override {
         extraPkgs = pkgs: with pkgs; [
-          libkrb5
-          keyutils
-          libgdiplus
-          libpng
-          libpulseaudio
-          libvorbis
           xorg.libXcursor
           xorg.libXi
           xorg.libXinerama
           xorg.libXScrnSaver
+          libpng
+          libpulseaudio
+          libvorbis
+          stdenv.cc.cc.lib
+          libkrb5
+          keyutils
         ];
       };
     };
@@ -49,6 +49,8 @@
     # Install tool for optimising games
     environment.systemPackages = with pkgs; [
       steam-run
+      steam-devices-udev-rules
+      gamescope
     ];
   };
 }

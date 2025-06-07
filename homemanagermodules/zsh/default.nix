@@ -16,7 +16,7 @@
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
 
-      initExtra = ''
+      initContent = ''
       # Bat theme
       export BAT_THEME=rose-pine-moon
       
@@ -46,6 +46,8 @@
 
       shellAliases = {
         ls = "eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions";
+        ll = "eza --color=always --long --git --no-filesize --icons=always";
+        lla = "eza --color=always --long --git --no-filesize --icons=always -la";
         dots = "cd ~/.dotfiles";
         cat = "bat";
         nf = "fastfetch";
