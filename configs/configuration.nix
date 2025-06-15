@@ -180,7 +180,7 @@
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 7d";
+    options = "--delete-older-than 30d";
   };
 
   # Automatic store cleaning
@@ -233,8 +233,8 @@
     gparted
     appimage-run
     mullvad-vpn
-    dunst
-    libnotify
+    #dunst
+    #libnotify
     fuse
     nur.repos.xddxdd.vk-hdr-layer # HDR for Vulkan
 

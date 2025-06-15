@@ -5,7 +5,7 @@
   options.distrobox.enable = lib.mkEnableOption "distrobox";
 
   # Install Distrobox
-  config = lib.mkIf config.steam.enable {
+  config = lib.mkIf config.distrobox.enable {
 
     virtualisation.podman.enable = true;
 

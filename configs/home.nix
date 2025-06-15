@@ -33,7 +33,7 @@
 
     # Terminal
     fastfetch
-    nnn # terminal file manager
+    #nnn # terminal file manager
     btop  # replacement of htop/nmon
     nvtopPackages.amd
     iotop # io monitoring
@@ -55,8 +55,8 @@
     # utils
     vlc
     ncdu  # Disk space sniffer
-    swww  # Wallpaper utility
-    grimblast # Screenshot util
+    #swww  # Wallpaper utility
+    #grimblast # Screenshot util
     usbutils  # USB drivers and utilities
     wget
     remmina #RDP client
@@ -75,7 +75,7 @@
     # Applications
     qbittorrent
     vscode
-    discord
+    #discord
     vesktop # Discord alt
     telegram-desktop
     thunderbird
@@ -86,7 +86,7 @@
     glaxnimate # For KDENLive
     darktable
     onlyoffice-bin
-    libreoffice-qt6-fresh
+    #libreoffice-qt6-fresh
     kicad
     pinta     #paint
     inputs.old-orcaslicer-nixpkgs.legacyPackages.${system}.orca-slicer
