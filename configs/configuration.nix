@@ -27,7 +27,7 @@
 
   boot.supportedFilesystems = [ "ntfs" ];
 
-  boot.kernelPackages = pkgs.linuxPackages_6_14;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # VirtualBox fix https://github.com/NixOS/nixpkgs/issues/363887#issuecomment-2536693220 
   boot.kernelParams = [ "kvm.enable_virt_at_load=0" ];
@@ -58,7 +58,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  #networking.nameservers = ["10.0.0.250" "10.0.0.250"];
+  networking.nameservers = ["10.0.0.250" "10.0.0.250"];
   # Set your time zone.
   time.timeZone = "America/Vancouver";
 

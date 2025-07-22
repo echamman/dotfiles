@@ -84,12 +84,13 @@
     google-chrome  # For work
     kdePackages.kdenlive
     glaxnimate # For KDENLive
-    darktable
+    inputs.old-darktable-nixpkgs.legacyPackages.${system}.darktable
     onlyoffice-bin
     #libreoffice-qt6-fresh
     kicad
     pinta     #paint
-    inputs.old-orcaslicer-nixpkgs.legacyPackages.${system}.orca-slicer
+    #inputs.old-orcaslicer-nixpkgs.legacyPackages.${system}.orca-slicer
+    orca-slicer
     obsidian
     boxbuddy  # Manages distroboxes
     
@@ -106,7 +107,7 @@
     # Music Production
     bitwig-studio
     reaper
-    inputs.nixpkgs-stable.legacyPackages.${system}.yabridge # Use NixPkgs Stable yabridge for wine-staging 9.20
+    inputs.nixpkgs-stable.legacyPackages.${system}.yabridge # Use NixPkgs Stable because it breaks often
     yabridgectl
     elektroid
 
