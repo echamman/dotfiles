@@ -7,7 +7,7 @@
     ../homemanagermodules
     inputs.nix-colors.homeManagerModules.default
     inputs.spicetify-nix.homeManagerModules.default
-    inputs.nixvim.homeManagerModules.nixvim
+    #inputs.nixvim.homeManagerModules.nixvim
     inputs.zen-browser.homeModules.beta
   ];
 
@@ -68,6 +68,7 @@
     alsa-scarlett-gui # Focusrite
     moonlight-qt
     syncthing
+    mangohud  
 
     # networking tools
     nmap # A utility for network discovery and security auditing
@@ -84,13 +85,14 @@
     google-chrome  # For work
     kdePackages.kdenlive
     glaxnimate # For KDENLive
-    inputs.old-darktable-nixpkgs.legacyPackages.${system}.darktable
+    #inputs.old-darktable-nixpkgs.legacyPackages.${system}.darktable
+    darktable
     onlyoffice-bin
     #libreoffice-qt6-fresh
     kicad
     pinta     #paint
-    #inputs.old-orcaslicer-nixpkgs.legacyPackages.${system}.orca-slicer
-    orca-slicer
+    inputs.old-orcaslicer-nixpkgs.legacyPackages.${system}.orca-slicer
+    #orca-slicer
     obsidian
     boxbuddy  # Manages distroboxes
     
@@ -98,6 +100,7 @@
     prismlauncher
     dolphin-emu
     clonehero
+    minigalaxy
 
     # system call monitoring
     strace # system call monitoring

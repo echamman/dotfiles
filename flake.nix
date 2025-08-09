@@ -12,7 +12,7 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
 
     # Older orca slicer package
-    old-orcaslicer-nixpkgs.url = "github:nixos/nixpkgs/aa1203429f56d2e816a77fda34f069705e975f97";
+    old-orcaslicer-nixpkgs.url = "github:nixos/nixpkgs/e6f23dc08d3624daab7094b701aa3954923c6bbb";
 
     # Pin darktable
     old-darktable-nixpkgs.url = "github:nixos/nixpkgs/c48b594afc3079d26a1393494c68c01c82c73180";
@@ -37,16 +37,27 @@
        url = "github:Are10/flake-overwitch/main";
        inputs.nixpkgs.follows = "nixpkgs";
     };
-    
-    # Nixvim 
-    nixvim = {
-      url = "github:nix-community/nixvim";
+
+    lsfg-vk-flake = {
+      url = "github:pabloaul/lsfg-vk-flake/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.2";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    
+    # Nixvim 
+    # nixvim = {
+    #   url = "github:nix-community/nixvim";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
-  };
+    };
 
     # home-manager, used for managing user configuration
     home-manager = {
@@ -55,7 +66,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, nix-gaming, nur, home-manager, grub2-themes, spicetify-nix, overwitch, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, nix-gaming, nur, home-manager, grub2-themes, spicetify-nix, overwitch, lsfg-vk-flake, lanzaboote, ... }:
 
     let
       system = "x86_64-linux";
@@ -88,6 +99,8 @@
             grub2-themes.nixosModules.default
             inputs.musnix.nixosModules.musnix
             overwitch.nixosModules.default
+            lsfg-vk-flake.nixosModules.default
+            lanzaboote.nixosModules.lanzaboote
           ];
         };
       };

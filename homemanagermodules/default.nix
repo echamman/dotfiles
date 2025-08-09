@@ -9,7 +9,7 @@
     ./zsh/default.nix
     ./hyprland/default.nix
     ./spicetify/default.nix
-    ./neovim/default.nix
+    #./neovim/default.nix
     ./waybar/default.nix
     ./obs-studio/default.nix
   ];

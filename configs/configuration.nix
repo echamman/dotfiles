@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-stable, pkgs-gaming, inputs, outputs, ... }:
+{ config, pkgs, lib, pkgs-stable, pkgs-gaming, inputs, outputs, ... }:
 
 {
   imports =
@@ -10,19 +10,27 @@
   # Bootloader.
   boot.loader = {
     efi.canTouchEfiVariables = true;
-    grub = {
-      enable = true;
-      devices = [ "nodev" ];
-      efiSupport = true;
-      useOSProber = true;
-    };
+    systemd-boot.enable = lib.mkForce false; # Moved to lanzaboote
 
-    grub2-theme = {
-      enable = true;
-      theme = "vimix";
-      icon = "color";
-      screen = "ultrawide2k";
-    };
+    # Old Grub config
+    # grub = {
+    #   enable = true;
+    #   devices = [ "nodev" ];
+    #   efiSupport = true;
+    #   useOSProber = true;
+    # };
+
+    # grub2-theme = {
+    #   enable = true;
+    #   theme = "vimix";
+    #   icon = "color";
+    #   screen = "ultrawide2k";
+    # };
+  };
+
+  boot.lanzaboote = {
+    enable = true;
+    pkiBundle = "/var/lib/sbctl";
   };
 
   boot.supportedFilesystems = [ "ntfs" ];
@@ -58,7 +66,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  networking.nameservers = ["10.0.0.250" "10.0.0.250"];
+  #networking.nameservers = ["10.0.0.250" "10.0.0.250"];
   # Set your time zone.
   time.timeZone = "America/Vancouver";
 
@@ -87,6 +95,11 @@
     layout = "us";
     variant = "";
   };
+
+  # REMOVE WHEN PATCHED
+  nixpkgs.config.permittedInsecurePackages = [
+    "libsoup-2.74.3"
+  ];
 
   services.flatpak.enable = true;
 
@@ -127,7 +140,10 @@
   };
 
   # For Lutris
-  systemd.extraConfig = "DefaultLimitNOFILE=524288";
+  systemd.settings.Manager = {
+    DefaultLimitNOFILE = "524288";
+  };
+
   security.pam.loginLimits = [{
     domain = "ethan";
     type = "hard";
@@ -237,6 +253,7 @@
     #libnotify
     fuse
     nur.repos.xddxdd.vk-hdr-layer # HDR for Vulkan
+    sbctl # Secureboot key gen
 
     # Nix Utilities
     nh  # Nix Helper
@@ -266,14 +283,38 @@
   };
   
   # 1password zen browser
+  # idk which name is the one that works so I'm leaving them
   environment.etc = {
   "1password/custom_allowed_browsers" = {
     text = ''
+      .zen-beta-wrapped
+      zen-beta
+      zen-beta-bin-unwrapped
+      .zeta-beta-bin-unwrapped
+      .zen-beta
+      zen
       .zen
     ''; 
     mode = "0755";
+    };
   };
-};
+
+  # Yubikey
+  security.pam.u2f = {
+    enable = true;
+    settings = {
+      interactive = true;
+      cue = true;
+      };
+  };
+
+  security.pam.services = {
+    login.u2fAuth = true;
+    sudo.u2fAuth = true;
+  };
+
+  services.pcscd.enable = true;
+
   # Hyprland Setup
   programs.hyprland = {
     enable = false;
@@ -300,6 +341,11 @@
         user = "ethan";
         dataDir = "/home/ethan/Documents";    # Default folder for new synced folders
         configDir = "/home/ethan/Documents/.config/syncthing";   # Folder for Syncthing's settings and keys
+    };
+
+    lsfg-vk = {
+      enable = true;
+      ui.enable = true; # installs gui for configuring lsfg-vk
     };
 };
 
