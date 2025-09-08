@@ -44,6 +44,7 @@
     bat # cat replacement
     #delta # git diff
     neovim # neovim
+    nur.repos.charmbracelet.crush # AI terminal tool
 
     # archives
     zip
@@ -91,10 +92,11 @@
     #libreoffice-qt6-fresh
     kicad
     pinta     #paint
-    inputs.old-orcaslicer-nixpkgs.legacyPackages.${system}.orca-slicer
-    #orca-slicer
+    #inputs.old-orcaslicer-nixpkgs.legacyPackages.${system}.orca-slicer
+    orca-slicer
     obsidian
     boxbuddy  # Manages distroboxes
+    lmstudio
     
     # Games
     prismlauncher
@@ -113,6 +115,9 @@
     inputs.nixpkgs-stable.legacyPackages.${system}.yabridge # Use NixPkgs Stable because it breaks often
     yabridgectl
     elektroid
+
+    # Dev Tools
+    esphome
 
     # KDE Plugins
     (callPackage ../packages/kde-window-title-applet { })

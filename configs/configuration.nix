@@ -31,6 +31,7 @@
   boot.lanzaboote = {
     enable = true;
     pkiBundle = "/var/lib/sbctl";
+    configurationLimit = 5;
   };
 
   boot.supportedFilesystems = [ "ntfs" ];
@@ -97,9 +98,9 @@
   };
 
   # REMOVE WHEN PATCHED
-  nixpkgs.config.permittedInsecurePackages = [
-    "libsoup-2.74.3"
-  ];
+  # nixpkgs.config.permittedInsecurePackages = [
+  #   "libsoup-2.74.3"
+  # ];
 
   services.flatpak.enable = true;
 
@@ -196,7 +197,7 @@
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 30d";
+    options = "--delete-older-than 7d";
   };
 
   # Automatic store cleaning
@@ -235,8 +236,7 @@
     # Wine Packages
     wineWowPackages.stable
     winetricks
-    #pkgs-gaming.wine-tkg
-    inputs.nix-gaming.packages.${pkgs.system}.wine-tkg
+    #inputs.nix-gaming.packages.${pkgs.system}.wine-tkg
 
     # gaming
     lutris
