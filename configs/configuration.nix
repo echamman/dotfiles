@@ -301,7 +301,7 @@
 
   # Yubikey
   security.pam.u2f = {
-    enable = true;
+    enable = false;
     settings = {
       interactive = true;
       cue = true;
@@ -309,11 +309,11 @@
   };
 
   security.pam.services = {
-    login.u2fAuth = true;
-    sudo.u2fAuth = true;
+    login.u2fAuth = false;
+    sudo.u2fAuth = false;
   };
 
-  services.pcscd.enable = true;
+  services.pcscd.enable = false;
 
   # Hyprland Setup
   programs.hyprland = {

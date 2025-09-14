@@ -124,7 +124,7 @@
     plasmusic-toolbar
     (callPackage ../packages/kde-wunderground { })
     kara
-    kdePackages.wallpaper-engine-plugin
+    #kdePackages.wallpaper-engine-plugin
   ];
 
   # Git config
